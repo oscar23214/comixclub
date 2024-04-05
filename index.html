@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Crossword Puzzle</title>
+  <style>
+    table {
+      margin-top: 25%;
+      align-items: center;
+      margin-left: 25%;
+      position:absolute;
+      transform: translate(-10%,-10%);
+      
+    }
+    td {
+      width: 10px;
+      height: 10px;
+      border: 1px solid black;
+      text-align: center;
+      font-size: 2px;
+    }
+    input{
+      width: 25px;
+      font-size: 20px;
+    }
+
+    .ib {
+      border: none;
+      
+    }
+    h1{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: black;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+.time{
+  position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: black;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+button{
+  position: absolute;
+    top: 1700px;
+    left: 50%;
+    transform: translate(0%,-50%);
+    color: black;
+    font-size: 20px;
+    font-weight: 900;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 3px;
+}
+
+#username{
+
+  position: absolute;
+    top: 1700px;
+    left: 50%;
+    width: 100px;
+    transform: translate(-150%,-50%);
+    color: black;
+    font-size: 20px;
+    font-weight: 900;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 3px;
+
+}
+
+ul{
+  position: absolute;
+    top: 2200px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: black;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+
+  </style>
+</head>
+<body>
+  <h1>Interactive Crossword Puzzle</h1>
+  <h1 class="time" text-align="center" id ="Current-time">12:00:00</h1>
+
+  <script type="module">
+    
+    let time = document.getElementById("Current-time");
+            
+            setInterval(()=> {
+               let d =new Date();
+               time.innerHTML=d.toLocaleTimeString();
+            })
+  </script>
+
+
+  <table>
+   
+    <tr>
+     
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"> </td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+            
+      <td><input type="text" maxlength="1" placeholder="1" id="1a"></td>
+
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      
+
+    </tr>
+    <tr>
+     
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td><td class="ib"><input  type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib">    </td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+            
+      <td><input type="text" maxlength="1" placeholder="1" id="1b"></td>
+
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+    </tr>
+
+   <tr>
+     
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td><td class="ib"><input  type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib">    </td>
+          
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+            
+      <td><input type="text" maxlength="1" placeholder="1" id="1c"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      
+
+    </tr>  <tr>
+     
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td><td class="ib"><input  type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib">    </td>
+          
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+            
+      <td><input type="text" maxlength="1" placeholder="1" id="1d"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      
+
+    </tr>  <tr>
+     
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td><td class="ib"><input  type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib">    </td>
+          
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+            
+      <td><input type="text" maxlength="1" placeholder="1" id="a5"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      
+
+    </tr> <tr>
+     
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td><td class="ib"><input  type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib">    </td>
+          
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+            
+      <td><input type="text" maxlength="1" placeholder="1" id="a6"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      
+
+    </tr> <tr>
+     
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td><td class="ib"><input  type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib">    </td>
+          
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+            
+      <td><input type="text" maxlength="1" placeholder="1" id="a7"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      
+
+    </tr> <tr>
+     
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td><td class="ib"><input  type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib">    </td>
+          
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+            
+      <td><input type="text" maxlength="1" placeholder="1" id="a8"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      
+
+    </tr> <tr>
+     
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td><td class="ib"><input  type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib">    </td>
+          
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+            
+      <td><input type="text" maxlength="1" placeholder="1" id="a9"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      
+
+    </tr>  <tr>
+     
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td><td class="ib"><input  type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib">    </td>
+          
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+            
+      <td><input type="text" maxlength="1" placeholder="1" id="a10"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      
+
+    </tr> <tr>
+     
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td><td class="ib"><input  type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib">    </td>
+          
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+            
+      <td><input type="text" maxlength="1" placeholder="1" id="a11"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      
+
+    </tr> <tr>
+     
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td><td class="ib"><input  type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib">    </td>
+          
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+            
+      <td><input type="text" maxlength="1" placeholder="1" id="a12"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      
+
+    </tr> <tr>
+     
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td><td class="ib"><input  type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib">    </td>
+          
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+            
+       <td><input type="text" maxlength="1" placeholder="1" id="a13"></td>
+
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      
+
+    </tr> <tr>
+     
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td><td class="ib"><input  type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib">    </td>
+          
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+            
+        <td><input type="text" maxlength="1" placeholder="1" id="14a"></td>
+
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      
+
+    </tr>   <tr>
+     
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib">
+       
+        <td > <input type="text" maxlength="1" placeholder="3" id="3b"> </td>   
+
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib">
+            
+      <td><input type="text" maxlength="1" placeholder="1" id="1"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib">
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib">
+        
+        <td><input type="text" maxlength="1" placeholder="2" id=""> </td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"><td class="ib"><input type="text" maxlength="1" placeholder="" class="ib">
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+
+      
+
+    </tr>  <tr>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td> <td class="ib"><input class="ib" type="text" maxlength="1" placeholder=""></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td> <td class="ib"><input class="ib" type="text" maxlength="1" placeholder=""></td>
+      <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td> <td class="ib"><input type="text" maxlength="1" placeholder="" class="ib"></td>
+      <td class="ib"><input class="ib"type="text" maxlength="1" placeholder=""></td> <td ><input type="text" maxlength="1" placeholder="3"></td>
+      <td class="ib"><input class="ib"type="text" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="4"></td> <td><input type="text" maxlength="1" placeholder="4"></td>
+      <td><input  type="text" maxlength="1" placeholder="4"></td> <td><input type="text" maxlength="1" placeholder="4"></td>
+      
+      <td ><input type="text" maxlength="1" placeholder="2" class="ib"> </td><td ><input type="text" maxlength="1" placeholder="4" class="ib"> </td>
+
+      <td ><input type="text" maxlength="1" placeholder="4" class="ib"> </td><td ><input type="text" maxlength="1" placeholder="4" class="ib"> </td>
+      <td ><input type="text" maxlength="1" placeholder="4" class="ib"> </td><td ><input type="text" maxlength="1" placeholder="4" class="ib"> </td>
+    </tr>    <tr>
+     
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td class="ib"><input class="ib" type="text" maxlength="1" placeholder=""></td> <td class="ib"><input class="ib" type="text" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="6"></td> <td><input type="text" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder=""></td> <td><input type="text" maxlength="1" placeholder="3"></td>
+      <td><input type="text" maxlength="1" placeholder=""></td> <td><input type="text" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder=""></td> <td><input type="text" maxlength="1" placeholder="5"></td>
+      <td><input type="text" maxlength="1" placeholder=""></td> <td><input type="text" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="2"></td> <td><input type="text" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder=""></td> <td><input type="text" maxlength="1" placeholder=""></td>
+    
+
+    </tr>  <tr>
+     
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td class="ib"><input class="ib" type="text" maxlength="1" placeholder=""></td> <td class="ib"><input class="ib" type="text" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="6"></td> <td><input type="text" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder=""></td> <td><input type="text" maxlength="1" placeholder="3"></td>
+      <td><input type="text" maxlength="1" placeholder=""></td> <td><input type="text" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder=""></td> <td><input type="text" maxlength="1" placeholder="5"></td>
+      <td><input type="text" maxlength="1" placeholder=""></td> <td><input type="text" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="2"></td> <td><input type="text" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder=""></td> <td><input type="text" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="7"></td> 
+    
+
+    </tr>  <tr>
+     
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td class="ib"><input class="ib" type="text" maxlength="1" placeholder=""></td> <td class="ib"><input class="ib" type="text" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="6"></td> <td><input type="text" maxlength="1" placeholder=""></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> 
+      <td><input type="text" maxlength="1" placeholder=""></td> <td><input type="text" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder=""></td> <td><input type="text" maxlength="1" placeholder="5"></td>
+      <td><input type="text" maxlength="1" placeholder=""></td> <td><input type="text" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="8"></td> <td><input type="text" maxlength="1" placeholder="8"></td>
+      <td><input type="text" maxlength="1" placeholder="8"></td> <td><input type="text" maxlength="1" placeholder="8"></td>
+      <td><input type="text" maxlength="1" placeholder="8"></td> <td><input type="text" maxlength="1" placeholder="8"></td>
+      
+    
+
+    </tr>  <tr>
+     
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td class="ib"><input class="ib" type="text" maxlength="1" placeholder=""></td> <td class="ib"><input class="ib" type="text" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="6"></td> <td><input type="text" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="9"></td> <td><input type="text" maxlength="1" placeholder="9"></td>
+      <td><input type="text" maxlength="1" placeholder="9"></td> <td><input type="text" maxlength="1" placeholder="9"></td>
+      <td><input type="text" maxlength="1" placeholder="9"></td> <td><input type="text" maxlength="1" placeholder="9"></td>
+      <td><input type="text" maxlength="1" placeholder="9"></td> <td><input type="text" maxlength="1" placeholder="9"></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td><input type="text" maxlength="1" placeholder="7"></td> 
+    
+
+    </tr>  <tr>
+     
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td class="ib"><input class="ib" type="text" maxlength="1" placeholder=""></td> <td class="ib"><input class="ib" type="text" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="6"></td><td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td><input type="text" maxlength="1" placeholder="3"></td>
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+          <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+            <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""><td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td><input type="text" maxlength="1" placeholder="7"></td> 
+    
+
+    </tr>  <tr>
+     
+      <tr>
+     
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+        <td class="ib"><input class="ib" type="text" maxlength="1" placeholder=""></td> <td class="ib"><input class="ib" type="text" maxlength="1" placeholder=""></td>
+        <td><input type="text" maxlength="1" placeholder="6"></td><td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+          <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td><input type="text" maxlength="1" placeholder="3"></td>
+          <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+          <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+            <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+              <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""><td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+        <td><input type="text" maxlength="1" placeholder="7"></td> 
+      
+    
+
+    </tr>  <tr>
+     
+      <tr>
+     
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+        <td class="ib"><input class="ib" type="text" maxlength="1" placeholder=""></td> <td class="ib"><input class="ib" type="text" maxlength="1" placeholder=""></td>
+        <td><input type="text" maxlength="1" placeholder="6"></td><td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+          <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td><input type="text" maxlength="1" placeholder="3"></td>
+          <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+          <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+            <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+              <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""><td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+        <td><input type="text" maxlength="1" placeholder="7"></td> 
+      
+
+    </tr>  <tr>
+     
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="10"></td> <td><input type="text" maxlength="1" placeholder="10"></td>
+      <td><input type="text" maxlength="1" placeholder="10"></td> <td><input type="text" maxlength="1" placeholder="10"></td>
+      <td><input type="text" maxlength="1" placeholder="10"></td> <td><input type="text" maxlength="1" placeholder="3"></td>
+      <td><input type="text" maxlength="1" placeholder="10"></td> <td><input type="text" maxlength="1" placeholder="10"></td>
+      <td><input type="text" maxlength="1" placeholder="10"><td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="11"></td> <td><input type="text" maxlength="1" placeholder="11"></td>
+      <td><input type="text" maxlength="1" placeholder="11"></td> <td><input type="text" maxlength="1" placeholder="11"></td>
+      <td><input type="text" maxlength="1" placeholder="7"></td> <td><input type="text" maxlength="1" placeholder="11"></td> 
+    
+
+    </tr>  <tr>
+     
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="6"></td> <td><input type="text" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder=""></td> <td><input type="text" maxlength="1" placeholder="3"></td>
+     <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td><input type="text" maxlength="1" placeholder="7"></td> 
+    
+
+    </tr>  <tr>
+     
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="6"></td><td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> 
+      <td><input type="text" maxlength="1" placeholder="12"></td> <td><input type="text" maxlength="1" placeholder="3"></td>
+      <td><input type="text" maxlength="1" placeholder="12"></td> <td><input type="text" maxlength="1" placeholder="12"></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="13"></td> <td><input type="text" maxlength="1" placeholder="14"></td>
+      <td><input type="text" maxlength="1" placeholder="13"></td> <td><input type="text" maxlength="1" placeholder="13"></td>
+      <td><input type="text" maxlength="1" placeholder="13"></td> <td><input type="text" maxlength="1" placeholder="13"></td>
+      <td><input type="text" maxlength="1" placeholder="7"></td> 
+      <td><input type="text" maxlength="1" placeholder="13"></td><td><input type="text" maxlength="1" placeholder="13"></td>
+    
+
+    </tr>  <tr>
+     
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="6"></td> <td><input type="text" maxlength="1" placeholder=""></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> 
+       <td><input type="text" maxlength="1" placeholder="14"></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td><input type="text" maxlength="1" placeholder="7"></td> 
+
+    </tr>  <tr>
+     
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="6"></td> <td><input type="text" maxlength="1" placeholder=""></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td><input type="text" maxlength="1" placeholder="15"></td> <td><input type="text" maxlength="1" placeholder=""></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td><input type="text" maxlength="1" placeholder=""></td> <td><input type="text" maxlength="1" placeholder="14"></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""><td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> 
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td><input type="text" maxlength="1" placeholder="7"></td> 
+    
+
+    </tr>  <tr>
+     
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td></td> <td><input type="text" maxlength="1" placeholder="16"></td>
+      <td><input type="text" maxlength="1" placeholder="16"></td> <td><input type="text" maxlength="1" placeholder="16"></td>
+      <td><input type="text" maxlength="1" placeholder="6"></td> <td><input type="text" maxlength="1" placeholder="16"></td>
+      <td><input type="text" maxlength="1" placeholder="16"></td> <td><input type="text" maxlength="1" placeholder="16"></td>
+      <td><input type="text" maxlength="1" placeholder="15"></td> <td><input type="text" maxlength="1" placeholder="16"></td>
+      <td><input type="text" maxlength="1" placeholder="16"></td> <td><input type="text" maxlength="1" placeholder="16"></td>
+      <td><input type="text" maxlength="1" placeholder=""></td> <td><input type="text" maxlength="1" placeholder="14"></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""><td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+
+    </tr>  <tr>
+     
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="6"></td><td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""><td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td><input type="text" maxlength="1" placeholder="15"></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""><td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+          <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td><input type="text" maxlength="1" placeholder="14"></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+
+    </tr>  <tr>
+     
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td><input type="text" maxlength="1" placeholder="6"></td><td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""><td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td><input type="text" maxlength="1" placeholder="15"></td>  <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+          <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td><input type="text" maxlength="1" placeholder="14"></td>
+          <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+            <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+
+    </tr>
+  </tr>  <tr>
+     
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+    <td><input type="text" maxlength="1" placeholder="6"></td><td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""><td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+    <td><input type="text" maxlength="1" placeholder="15"></td>  <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">  <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""><td><input type="text" maxlength="1" placeholder="14"></td>
+        <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+          <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+
+  </tr> </tr> 
+   <tr>
+     
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+    <td><input type="text" maxlength="1" placeholder="6"></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""><td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+        <td><input type="text" maxlength="1" placeholder="15"> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+  
+
+  </tr>
+  <tr>
+     
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+    <td><input type="text" maxlength="1" placeholder="6"></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""><td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+    <td><input type="text" maxlength="1" placeholder="15"></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+  </tr> <tr>
+     
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+    <td><input type="text" maxlength="1" placeholder="6"></td><td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""><td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+    <td><input type="text" maxlength="1" placeholder="15"></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+
+  </tr> <tr>
+     
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+    <td><input type="text" maxlength="1" placeholder="17"></td> <td><input type="text" maxlength="1" placeholder="17"></td>
+    <td><input type="text" maxlength="1" placeholder="17"></td> <td><input type="text" maxlength="1" placeholder="17"></td>
+    <td><input type="text" maxlength="1" placeholder="15"></td> <td><input type="text" maxlength="1" placeholder="17"></td>
+    <td><input type="text" maxlength="1" placeholder="17"></td> <td><input type="text" maxlength="1" placeholder="17"></td>
+    <td><input type="text" maxlength="1" placeholder="17"></td> <td><input type="text" maxlength="1" placeholder="17"></td>
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+      <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+  
+
+  </tr> <tr>
+     
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+    <td><input type="text"  maxlength="1" placeholder="17"></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+    <td><input type="text" maxlength="1" placeholder="15"></td><td class="ib"><input type="text" class="ib" maxlength="1" placeholder="">
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+    <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td> <td class="ib"><input type="text" class="ib" maxlength="1" placeholder=""></td>
+
+  </tr>
+    
+    <!-- Add remaining rows here -->
+  </table>
+
+  <ul>
+    <li> 1. Group of friends have to play a game to decrease debt on each one  </li>
+    <li>2. Witnessing death of a loved ones. The main character time travelled 18 years back to prevent the death of 3 more characters. Anime name? </li>
+    <li>3. No-barred place known as 'S'. Hardcore skaters compete with each other. Name the anime</li>
+    <li>4. After a alien invasion, students are determined to kill their Teacher </li>
+    <li>5. Anime famous for its theme song, thriller, include apples</li>
+    <li>6. Competing each other to become a King wizard </li>
+    <li>7. Anime being a parody of Harry Potter and Black clover </li>
+    <li>8. Guess who said this - "I am the honoured one" and " I am the strongest" </li>
+    <li>9. Whale friend of brook</li>
+    <li>10. Who was known as the Teleporter in Naruto </li>
+    <li>11. Name the beast, due to which Rin died in Naruto.</li>
+    <li>12. Children from the orphanage escape the orphanage after knowing the truth of their Mom and the organisation of monestors</li>
+    <li>13. Real Name the character - main anatogist and grandson of a pro-hero (MHA)</li>
+    <li>14. Which team was the cats, when played against Karasuno </li>
+    <li>15. from the verge of extinction a species rise up and challenges the Gods for their survival. </li>
+    <li>16. Parody of all anime </li>
+    <li>17. After being given a mysterious power to control others, an outcast prince becomes the masked leader of the rebellion against an all-powerful empire 
+    </li>
+    <li>18. In bungo stray dogs, character known as angle of death. </li>
+    <li>19. The Bar hosts games between the recently deceased that determine the fate of their souls </li>
+    <li>20. The chief of iwagakure</li>
+  </ul>
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <button><input type="submit" value="submit" class="sub" id="submit"> </button>
+  <input type="text" name="username" id="username" placeholder="NAME" required>
+
+  <script type="module">
+
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+  import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAy0Sw14qHbsLeejdu_qVKkUzK9TM1WZ9s",
+    authDomain: "crossword-comixclub.firebaseapp.com",
+    projectId: "crossword-comixclub",
+    storageBucket: "crossword-comixclub.appspot.com",
+    messagingSenderId: "700375577053",
+    appId: "1:700375577053:web:7949c57e1816f6814cc634"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  const db = getDatabase(app);
+
+  document.getElementById("submit").addEventListener('click', function(e){
+   e.preventDefault(); 
+   set(ref(db, 'user/' + document.getElementById("username").value),
+   {
+
+     a1: document.getElementById("1a").value,
+     b1: document.getElementById("1b").value,
+     c1: document.getElementById("1c").value
+     
+
+   });
+     alert("Submission Sucessfull !");
+  })
+
+
+
+  </script>
+</body>
+</html>
+
+
